@@ -1,6 +1,6 @@
-
-import { getToken, onMessage } from "firebase/messaging";
-import { messaging } from "./firebase/firebaseConfig";
+//
+// import { getToken, onMessage } from "firebase/messaging";
+// import { messaging } from "./firebase/firebaseConfig";
 import {useEffect} from "react";
 
 function App() {
@@ -12,16 +12,8 @@ function App() {
 
 
         if (permission === "granted") {
-            const token = await getToken(messaging, {
-                vapidKey: 'BG9EQDk4FmXrfveQw4jF5nUfNBZf4zoM6E36HMktt3mAF7b4tJ2iMTv_K4uqpoEBh_x_MFwV9s9cJuNfd4uQ8qQ',
-            });
 
-
-            //We can send token to server
-            console.log("Token generated : ", token);
-
-
-
+            alert("Notification")
 
         } else if (permission === "denied") {
             //notifications are blocked
@@ -35,10 +27,10 @@ function App() {
     }, []);
 
 
-    onMessage(messaging, (payload) => {
-        console.log(payload);
-        alert("On Message ")
-    });
+    // onMessage(messaging, (payload) => {
+    //     console.log(payload);
+    //     alert("On Message ")
+    // });
 
 
     return (
