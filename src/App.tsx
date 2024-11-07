@@ -1,6 +1,6 @@
 
 import {useEffect} from "react";
-import { getToken } from "firebase/messaging";
+import { getToken, onMessage } from "firebase/messaging";
 import {messaging} from "./firebase/firebaseConfig.ts";
 
 function App() {
@@ -38,10 +38,10 @@ function App() {
     }, []);
 
 
-    // onMessage(messaging, (payload) => {
-    //     console.log(payload);
-    //     alert("On Message ")
-    // });
+    onMessage(messaging, (payload) => {
+        console.log(payload);
+        alert("On Message ")
+    });
 
 
     return (
